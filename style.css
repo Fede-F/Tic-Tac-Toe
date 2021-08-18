@@ -1,0 +1,253 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    color: #a58c51;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+h1{
+    font-size: 60px;
+    margin-bottom: 35px;
+}
+
+#player_winner{
+    width: auto;
+    height: 10%;
+    margin-top: 20px;
+}
+
+#winner{
+        width: 100%;
+		font-size: 30px;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#a58c51 10%, #dad2c1 50%, #ac9a68 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 5s linear infinite;
+		display: inline-block;
+        padding: 25px;
+}
+
+.form-control{
+    background: rgb(156, 153, 153);
+    border-color: #ccb170;
+    font-weight: bold;
+    color: black;
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+h5{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+#game_options{
+    width: 300px;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin: 0 auto;
+}
+
+
+#Tablero{
+    display: grid;
+    grid-template-columns: 33% 33% 35%;
+    grid-template-rows: 33% 33% 35%;
+    gap: 2px;
+    background: #ccb170;
+    height: 550px;
+    width: 550px;
+    border-radius: 2em/2em;
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+    margin: 0 auto;
+   
+}
+
+.button_options{
+    background: #ceab5a;
+    border: none;
+    border-radius: 2em/2em;
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px rgb(82, 80, 80);
+
+}
+
+.button_options:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  }
+
+input{
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+}
+
+#tile_0{
+    border-top-left-radius: 1em;
+}
+
+#tile_2{
+    border-top-right-radius: 1em;
+}
+
+#tile_6{
+    border-bottom-left-radius: 1em;
+}
+
+#tile_8{
+    border-bottom-right-radius: 1em;
+}
+
+/*The Modal*/
+.modal {
+    display: none; /*Hidden by default*/
+    position: fixed; /*Stay in place*/
+    z-index: 1; /*Sit on top*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+/* Modal Content/Box */
+.modal-content {
+    /*background-image: linear-gradient(315deg, #000000 0%, #414141 74%);*/
+    background-color: #414141;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+    border-radius: 2em/2em;
+}
+
+#game_mode_content{
+    display: grid;
+    grid-template-columns: 45% 5% 45%;
+}
+
+/*Vertical line separator*/
+.vl {
+    border-left: 1px solid #ccb170;
+    height: auto;
+
+}
+
+
+#difficult_content{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+
+#start_game {
+    width: 150px;
+    height: 50px;
+}
+
+
+/*Efectos de los botones*/
+
+.tile_button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color:  #ccb170;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    font-size: 70px;
+    background-color:rgb(41, 41, 41) ;
+
+}
+
+.tile_button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.tile_button:active {
+    color: #000
+}
+
+.tile_button:active:after {
+    background: transparent;
+}
+
+.tile_button:hover:before {
+    opacity: 1;
+}
+
+.tile_button:after {
+    z-index: -1;
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+footer{
+    bottom: 0px;
+    right: 20px;
+    position:fixed;
+}

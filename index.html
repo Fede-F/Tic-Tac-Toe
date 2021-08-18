@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Tic-Tac-Toe</h1>
+
+    <div id="game_options">
+        <button id="new_game" type="button" class="button_options" onclick="gameBoard.create_board(true)">Nuevo
+            juego</button>
+        <button id="new_players" type="button" class="button_options"
+            onclick="displayController.playerName_request('block')">Nuevos jugadores</button>
+    </div>
+    <div id="player_winner">
+        <h2 id="winner"></h2>
+    </div>
+    <div id="Tablero">
+    </div>
+
+    <div id="playersName_modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="game_mode_content">
+                <div id="vs_ia_content">
+                    <div class="justify-content-center">
+                        <h5 class="modal-title">Vs PC</h5>
+                        <div id="difficult_content">
+                            <h6 class="modal-title">Dificultad:</h6>
+                            <div>
+                                <input type="radio" class="game_difficult_input" id="medium_diff" name="difficult"
+                                    value="medium" checked>
+                                <label for="medium" class="game_difficult_label">Medio </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="game_difficult_input" id="hard_diff" name="difficult"
+                                    value="hard" disabled>
+                                <label for="hard" class="game_difficult_label" disabled>Dificil (En progreso)</label>
+                            </div>
+                        </div>
+                        <button id="start_game" type="button" class="button_options"
+                            onclick="gameBoard.vsPC_submit()">¡Comenzar!</button>
+                    </div>
+                </div>
+
+                <hr class="vl">
+
+                <div id="vs_palyer_content">
+                    <div class="justify-content-center">
+                        <h5 class="modal-title">Vs jugador</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="players_name">
+                            <div class="form-group text-left">
+                                <label for="player1_name" class="col-form-label">Jugador 1 (X):</label>
+                                <input type="text" class="form-control" id="player1_name" required>
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="player2_name" class="col-form-label">Jugador 2 (O):</label>
+                                <input type="text" class="form-control" id="player2_name" required>
+                            </div>
+                    </div>
+                    <div class="justify-content-center">
+                        <button id="start_game" type="button" class="button_options"
+                            onclick="gameBoard.vsPlayer_submit()">¡Comenzar!</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div >
+            <p >Autor: <a href="https://github.com/Fede-F/Library">Federico Fernandez</a>
+            </p>
+        </div>
+    </footer>
+</body>
+<script src="TicTacToe.js"></script>
+
+</html>
+<!-- 
+Efecto de boton
+https://codepen.io/leandrosimoes -->
